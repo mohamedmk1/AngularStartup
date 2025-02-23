@@ -1,0 +1,26 @@
+<form [formGroup]="taskForm" >
+  <mat-form-field class="example-full-width">
+    <mat-label>Task Name:</mat-label>
+    <input matInput id="title" formControlName="title" placeholder="Enter task name"/>
+    <div *ngIf="taskForm.get('title')?.invalid && (taskForm.get('title')?.dirty || taskForm.get('title')?.touched)" class="error">
+      <div *ngIf="taskForm.get('title')?.errors?.['required']">
+        Task Name is required.
+      </div>
+      <div *ngIf="taskForm.get('title')?.errors?.['minlength']" >
+        Task Name must be at least 3 characters long.
+      </div>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description" placeholder="Enter Description"></textarea>
+    <div *ngIf="taskForm.get('description')?.invalid && (taskForm.get('description')?.dirty || taskForm.get('description')?.touched)" class="error">
+      <div *ngIf="taskForm.get('description')?.errors?.['required']">
+        Description is required.
+      </div>
+    </div>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" [disabled]="taskForm.invalid" (click)="onSubmit()">Basic</button>
+</form>
