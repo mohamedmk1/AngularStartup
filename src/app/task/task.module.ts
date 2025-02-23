@@ -4,6 +4,8 @@ import {TaskListComponent} from "./task-list/task-list.component";
 import {TaskItemComponent} from "./task-item/task-item.component";
 import {TaskFormComponent} from "./task-form/task-form.component";
 import {SharedModule} from "../shared/shared.module";
+import {RouterOutlet} from "@angular/router";
+import {TaskRoutingModule} from "./task-routing.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import {SharedModule} from "../shared/shared.module";
     TaskFormComponent
   ],
   imports: [
-    SharedModule
+    SharedModule,
+    TaskRoutingModule
   ]
 })
 export class TaskModule {

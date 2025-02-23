@@ -15,8 +15,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     PageNotFoundComponent
   ],
   imports: [
-    CommonModule,
-    BrowserModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -25,8 +23,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MatCardModule
   ],
   exports: [
-    CommonModule,
-    BrowserModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
