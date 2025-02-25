@@ -1,0 +1,6 @@
+<button mat-flat-button color="primary" [routerLink]="'/task/add'">Add New Task</button>
+<div *ngFor="let task of tasksList">
+  <app-task-item [task]="task" (deleteTask)="onDeleteTask($event)" (toggle)="onToggleTask($event)"
+                 (editTask)="onEditTask($event)"></app-task-item>
+</div>
+
